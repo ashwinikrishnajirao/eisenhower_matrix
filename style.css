@@ -1,0 +1,294 @@
+:root {
+    --primary-color: rgb(255, 255, 255);
+    --secondary-color: #1e1e1e;
+    --text-color: black;
+    --task-color: #ffffff;
+    --footer-color: #1e1e1e;
+    --theme-btn: url("assets/Dark-theme-btn.svg");
+    --container-bg: url("./assets/Light-empty.svg");
+    --complete-icon: url("assets/complete.svg");
+    --filter: none;
+    --theme-transition: 0s; /* Adjust the transition time to your preference */
+    
+}
+
+
+* {
+    font-family:"ROBATA ", ROBATA   ;
+    margin: 10px;
+    padding: 0.2px;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    flex-direction:column ;
+    min-height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url('assets/back.svg'); /* Replace 'background.jpg' with your image file */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+header {
+  display: flex;
+  flex-direction: column;
+}
+.theme_toogle {
+  text-align: right;
+  margin-right: -px;
+}
+
+.theme_toogle_btn {
+  min-width: 40px;
+  min-height: 40px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  background-image: var(--theme-btn);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.theme_toogle_btn:hover {
+  background-size: 85%;
+  transition: 0.5s;
+  transform: rotate(90deg);
+}
+.theme_toogle {
+  margin-top: 30px;
+}
+
+.matrix {
+  position: relative;
+    width: 100%;
+    max-width: 750px; /* Adjust as needed */
+    margin: 0 auto;
+    height: 90%;
+    max-height: 2000px;
+    padding: 20px;
+    padding-top: 10px;
+    box-sizing: border-box;
+    /* background-color: #f0f0f0; Background color for the matrix */
+    border: 5px var( --footer-color) solid ;
+    background: var(--primary-color);
+    transition: var(--theme-transition);
+    color: var(--text-color);
+  }
+
+  .matrix-header {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .matrix-quadrants {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    background: var(--primary-color);
+    transition: var(--theme-transition);
+    
+  }
+  ul {
+    list-style-type: none; /* Remove bullets */
+  }
+  
+  .imp-urgent {
+    flex: 1;
+    background-color: #ed1212;
+    padding: 20px;
+    border: 1px solid #090909;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+  }
+
+  .imp-noturgent {
+    flex: 1;
+    background-color: #19ed12;
+    padding: 20px;
+    border: 1px solid #090909;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+  }
+  .notimp-urgent {
+    flex: 1;
+    background-color: #2812ed;
+    padding: 20px;
+    border: 1px solid #090909;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+  }
+  .notimp-noturgent {
+    flex: 1;
+    background-color: #767575;
+    padding: 20px;
+    border: 1px solid #090909;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+  }
+ 
+  .add-task {
+    display: block;
+   margin: auto;
+   width: 30%;
+    max-width: 750px; 
+    height: fit-content;
+   flex-direction: row;
+    align-items: center;
+    justify-content:center ;
+    padding: 0% 0%;
+    background-color: black; /* Add background color */
+    border:black ;
+    color: #bf17dd; /* Button text color */
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 85px;
+}
+
+/* Style for the round checkbox */
+.round-checkbox {
+   width: 15px; /* Set the width and height to create a round shape */
+   height: 15px;
+  border-radius: 50%; /* Make it round by setting border-radius to 50% */
+  appearance: none; /* Hide the default checkbox appearance */
+  outline: none; /* Remove the default focus outline */
+  border: 1px solid #000; /* Add a border for visibility */
+    vertical-align: middle;
+}
+
+/* Style for the checked round checkbox */
+.round-checkbox:checked {
+  background-color: #000000; /* Change the background color when checked */
+
+}
+.checkbox-label {
+    display: inline-block; /* Display the label and checkbox on the same line */
+    vertical-align: middle; /* Align the label vertically with the checkbox */
+}
+
+/* Modal styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0); /* Semi-transparent background */
+}
+
+.modal-content {
+  background-color: #f4f4f4;
+  margin: 4% auto; /* Centered vertically and horizontally */
+  padding: 4px;
+  border-radius: 5px;
+  max-width: 450px;
+}
+
+
+
+/* Style for the "+" button */
+#addTask-options {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.radio-box {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+.radio-box input[type="radio"] {
+  display: none;
+}
+
+.radio-box label {
+  position: relative;
+  /* padding: 25px 25px; Adjust the padding to control the size of the oval */
+  background-color: #e3e3e3; /* Background color of the oval */
+  border-radius: 50%; /* Make it oval-shaped */
+  cursor: pointer;
+  width: 1000px; /* Adjust the width of the stadium */
+  height: 50px;
+  padding: 10px 20px;
+  border:2px solid #000 ;
+  align-content: center;
+  border-top-left-radius: 50% 100px; /* Half of the height for top-left corner */
+    border-top-right-radius: 50% 100px; /* Half of the height for top-right corner */
+    border-bottom-left-radius: 50% 100px; /* Half of the height for bottom-left corner */
+    border-bottom-right-radius: 50% 100px; /* Half of the height for bottom-right corner */
+}
+
+
+.color-1:checked + label {
+  background-color: red; /* Change to the color you want for the first option */
+  color: #fff;
+}
+
+.color-2:checked + label {
+  background-color: #19ed12; /* Change to the color you want for the second option */
+  color: #fff;
+}
+
+.color-3:checked + label {
+  background-color: #2812ed; /* Change to the color you want for the third option */
+  color: #fff;
+}
+
+.color-4:checked + label {
+  background-color: #767575; /* Change to the color you want for the fourth option */
+  color: #fff;
+}
+
+/* Style the text input */
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+
+
+/* Style the submit button */
+button[type="submit"] {
+  padding: 10px 10px;
+  background-color: rgb(235, 165, 238);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Add a hover effect for the submit button */
+button[type="submit"]:hover {
+  background-color:purple;
+}
+
+.deleteButton{
+  background-color: transparent;
+  border: none;
+  outline: none; 
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+
+
+
+
+

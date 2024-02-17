@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>EISENHOWER PRIORITY MATRIX</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js" async defer></script>
+</head>
+
+<body>
+    <div class="container task_list_empty">
+
+        <div class="matrix">
+            <header>
+                <div class="theme_toogle">
+                    <button class="theme_toogle_btn" id="themeBtn"></button>
+                </div>
+            </header>
+            <div class="matrix-header">
+                <h1>EISHENHOWER PRIORITY MATRIX</h1>
+            </div>
+
+            <div class="matrix-quadrants">
+                <div class="imp-urgent">
+                    <h3>
+                        <center>IMPORTANT </br>URGENT</center>
+                    </h3>
+                    <ul id="tasklist-1"> </ul>
+                </div>
+
+                <div class="imp-noturgent">
+                    <h3>
+                        <center>IMPORTANT </br>NOT URGENT</center>
+                    </h3>
+                    <ul id="tasklist-2"> </ul>
+                </div>
+
+                <div class="notimp-urgent">
+                    <h3>
+                        <center>NOT IMPORTANT </br>URGENT</center>
+                    </h3>
+                    <ul id="tasklist-3"> </ul>
+                </div>
+
+                <div class="notimp-noturgent">
+                    <h3>
+                        <center>NOT IMPORTANT</br> NOT URGENT</center>
+                    </h3>
+                    <ul id="tasklist-4"> </ul>
+                </div>
+            </div>
+
+            <div class="add-task">
+                <center> <button id="addTask-options" class="plusbutton">
+                        <center>+</center>
+                    </button></center>
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+
+                        <label>Select the priority</label>
+                        <div class="radio-box" id="box1">
+                            <input type="radio" name="priority" value="1" id="radio1" class="color-1">
+                            <label for="radio1"><center>IMPORTANT AND URGENT</center></label>
+                        </div>
+                        <div class="radio-box" id="box2">
+                            <input type="radio" name="priority" value="2" id="radio2" class="color-2">
+                            <label for="radio2"><center>IMPORTANT AND NOT URGENT</center></label>
+                        </div>
+                        <div class="radio-box" id="box3">
+                            <input type="radio" name="priority" value="3" id="radio3" class="color-3">
+                            <label for="radio3"><center>NOT IMPORTANT AND URGENT</center></label>
+                        </div>
+                        <div class="radio-box" id="box4">
+                            <input type="radio" name="priority" value="4" id="radio4" class="color-4">
+                            <label for="radio4">NOT IMPORTANT AND NOT URGENT</label>
+                        </div>
+
+                    
+                        <div id="textBoxContainer" class="submit">
+                            <hr 4px>
+                            <input type="text" id="taskInput"  placeholder="Add a new task">
+                            <center><button id="submitButton" type="submit">Add</button></center>
+                        </div>
+                    
+
+                    </div>
+                </div>
+            </div>
+            <button id="deleteButton" class="deleteButton"><img src="assets/delete.svg" height="30px" ></button>
+        </div>
+</body>
+
+</html>
