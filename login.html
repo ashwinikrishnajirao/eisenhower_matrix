@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="signup.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
@@ -18,28 +18,37 @@
         <input type="email" id="email" name="email" placeholder="" />
         <label for="password">Password</label>
         <input type="password" id="password" name="password" placeholder="" />
-        <input type="submit" value="Login">
+        <input type="submit" value="Login" />
       </form>
     </div>
-    <p class="para-2">Not have an account ? <a href="signup.html">Sign Up Here</a></p>
+    <p class="para-2">
+      Not have an account ? <a href="signup.html">Sign Up Here</a>
+    </p>
     <script>
       // Function to handle login form submission
-      document.getElementById('loginForm').addEventListener('submit', function(event) {
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (event) {
           event.preventDefault(); // Prevent default form submission
-          const username = document.getElementById('email').value;
-          const password = document.getElementById('password').value;
+          const username = document.getElementById("email").value;
+          const password = document.getElementById("password").value;
 
           // Retrieve user data from local storage
-          const userData = JSON.parse(localStorage.getItem('userData'));
+          const userData = JSON.parse(localStorage.getItem("userData"));
 
-          if (userData && userData.username === username && userData.password === password) {
-              // Redirect to a secure page or perform any other action
-              window.location.href = 'index.html';
+          if (
+            userData &&
+            userData.username === username &&
+            userData.password === password
+          ) {
+            // Set a flag in localStorage to indicate successful login
+            localStorage.setItem("isLoggedIn", "true");
+            // Redirect to index.html
+            window.location.href = "index.html";
           } else {
-              alert('Invalid username or password');
+            alert("Invalid username or password");
           }
-      });
-  </script>
-
+        });
+    </script>
   </body>
 </html>

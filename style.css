@@ -262,6 +262,38 @@ input[type="text"] {
 
 
 
+/* Style for the header */
+.header1 {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 18px;
+}
+
+.buttons1 {
+  display: flex;
+  align-items: center; 
+}
+
+.button1 {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-left: 10px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.button1:hover {
+  background-color: #0056b3;
+}
+
+
+
 /* Style the submit button */
 button[type="submit"] {
   padding: 10px 10px;
