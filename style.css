@@ -289,6 +289,42 @@ button[type="submit"]:hover {
   cursor: pointer;
 }
 
+@media screen and (max-width: 768px) {
+  .matrix-quadrants {
+    flex-direction: column;
+  }
+
+  .imp-urgent,
+  .imp-noturgent,
+  .notimp-urgent,
+  .notimp-noturgent {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+/* Adjustments for smaller screens */
+@media screen and (max-width: 480px) {
+  .matrix-header h1 {
+    font-size: 20px;
+  }
+
+  .imp-urgent,
+  .imp-noturgent,
+  .notimp-urgent,
+  .notimp-noturgent {
+    padding: 10px;
+  }
+
+  .modal-content {
+    max-width: 300px;
+  }
+
+  .radio-box label {
+    padding: 10px 20px;
+  }
+}
+
 
 
 
