@@ -13,27 +13,33 @@
   <body>
     <div class="login-box">
       <h1>Login</h1>
-      <form onsubmit="func()">
-        <label>Email</label>
-        <input type="email" id="email" placeholder="" />
-        <label>Password</label>
-        <input type="password" id="password" placeholder="" />
-        <input type="submit" value="Submit">
+      <form id="loginForm">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="" />
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="" />
+        <input type="submit" value="Login">
       </form>
     </div>
     <p class="para-2">Not have an account ? <a href="signup.html">Sign Up Here</a></p>
     <script>
-        
-        function func(){
-          var email=document.getElementById("email").value;
-        var passwor=document.getElementById("password").value; 
-        if(email == 'ashwinikrishnajirao@gmail.com' && password=='12345'){
-window.location.assign("index.html")
-        } 
-        else{
-            alert("please sign up first!")
-        }
-        }
-    </script>
+      // Function to handle login form submission
+      document.getElementById('loginForm').addEventListener('submit', function(event) {
+          event.preventDefault(); // Prevent default form submission
+          const username = document.getElementById('email').value;
+          const password = document.getElementById('password').value;
+
+          // Retrieve user data from local storage
+          const userData = JSON.parse(localStorage.getItem('userData'));
+
+          if (userData && userData.username === username && userData.password === password) {
+              // Redirect to a secure page or perform any other action
+              window.location.href = 'index.html';
+          } else {
+              alert('Invalid username or password');
+          }
+      });
+  </script>
+
   </body>
 </html>

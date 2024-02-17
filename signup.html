@@ -12,22 +12,36 @@
     <div class="signup-box">
     <h1>Sign Up</h1>
     <h4>It's free and only takes a minute</h4>
-    <form>
-        <label>First Name</label>
-        <input type="text" id="username" placeholder="">
+    <form id="signupForm">
+        <label >First Name</label>
+        <input type="text" placeholder="">
         <label>Last Name</label>
         <input type="text" placeholder="">
-        <label>Email</label>
+        <label for="email">Email </label>
         <input type="email" id="email" placeholder="">
-        <label>Create Password</label>
+        <label for="password">Create Password</label>
         <input type="password" id="password" placeholder="">
         <label>Confirm Password</label>
         <input type="password" placeholder="">
-        <input type="Submit" value="Submit">
+        <input type="Submit" value="Signup">
     </form>
     <p>By Clicking the Sign Up button, you agree  to our<a href="#"> Terms and Conditions</a> and <a href="#">Privacy Policy</a></p>
 </div>
 <p class="para-2">Already have an account? <a href="login.html">Login here</a></p>
+<script>
+    // Function to handle signup form submission
+    document.getElementById('signupForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+        const username = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        // Save user data to local storage (In real-world scenarios, use a server and database)
+        localStorage.setItem('userData', JSON.stringify({ username: username, password: password }));
+
+        // Redirect to login page
+        window.location.href = 'login.html';
+    });
+</script>
 
 </body>
 </html>
