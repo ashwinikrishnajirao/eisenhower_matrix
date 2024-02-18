@@ -1,5 +1,5 @@
 **Eisenhower Priority Matrix Web App**
-**Revolutionize your task stratergy with this Priority Matrix app**
+*Revolutionize your task stratergy with this Priority Matrix app*
 
 
 The Eisenhower Priority Matrix Web Application represents a transformative approach to task management, offering a user-friendly platform rooted in the principles of the renowned Eisenhower Priority Matrix.
