@@ -42,9 +42,10 @@
             userData.password === password
           ) {
             // Set a flag in localStorage to indicate successful login
-            localStorage.setItem("isLoggedIn", "true");
+            
             // Redirect to index.html
             window.location.href = "index.html";
+            localStorage.setItem("isLoggedIn", "true");
           } else {
             alert("Invalid username or password");
           }

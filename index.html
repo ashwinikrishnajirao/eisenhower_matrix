@@ -100,20 +100,28 @@
             <button id="deleteButton" class="deleteButton"><img src="assets/delete.svg" height="30px" ></button>
         </div>
 
+
         <script>
-        // Check if the user is logged in (isLoggedIn is true)
-const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
-
-// Get reference to the header element
-const header = document.getElementById('header1');
-
-// If the user is logged in, hide the buttons
-if (isLoggedIn) {
-    const buttons = header.querySelector('.buttons1');
-    header.style.display = 'none'
-}
-
+            // Check if the user is logged in (isLoggedIn is true)
+            let isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+        
+            // Get reference to the header element
+            const header = document.getElementById('header1');
+        
+            // If the user is logged in, hide the buttons
+            if (isLoggedIn) {
+                const buttons = header.querySelector('.buttons1');
+                header.style.display = 'none';
+            } else {
+                header.style.display = 'block';
+            }
+        
+            // Set isLoggedIn to false after refreshing the page
+            window.addEventListener('beforeunload', function () {
+                localStorage.setItem('isLoggedIn', 'false');
+            });
         </script>
+        
 </body>
 
 </html>
