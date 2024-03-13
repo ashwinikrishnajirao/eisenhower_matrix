@@ -230,6 +230,7 @@ header {
 }
 
 
+
 .color-1:checked + label {
   background-color: red; /* Change to the color you want for the first option */
   color: #fff;
@@ -260,16 +261,40 @@ input[type="text"] {
   font-size: 16px;
 }
 
+@media (max-width: 568px) {
+.radio-box label {
+  position: relative;
+  background-color: #e3e3e3;
+  border-radius: 45%;
+  cursor: pointer;
+  width: auto; /* Adjusted to fit the content */
+  height: 50px;
+  padding: 0 20px; /* Adjusted padding for centering */
+  border: 2px solid #000;
+  align-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+/* Style the text input */
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box; /* Ensure padding is included in the width */
+}
+}
 
 /* Style for the header */
+/* Existing styles */
 .header1 {
   background-color: #49c1a2;
   color: #fff;
   padding: 10px 20px;
-  position: absolute;
-  top: 8px;
-  right: 10px;
   font-size: 18px;
 }
 
@@ -290,6 +315,28 @@ input[type="text"] {
 
 .button1:hover {
   background-color: #0056b3;
+}
+
+/* New styles for responsiveness */
+@media (max-width: 1379px) {
+  .header1 {
+    position: relative;
+    top: auto;
+    right: auto;
+    text-align: center;
+  }
+}
+
+@media (min-width: 1379px) {
+  .header1 {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+  }
+}
+
+.container.task_list_empty {
+  margin-top: 40px; /* Adjust this value as needed */
 }
 
 
