@@ -261,7 +261,7 @@ input[type="text"] {
   font-size: 16px;
 }
 
-@media (max-width: 568px) {
+@media screen and (max-width: 768px) {
 .radio-box label {
   position: relative;
   background-color: #e3e3e3;
